@@ -1,21 +1,81 @@
 .product-list {
   list-style-type: none;
   padding: 0;
+  background: aqua;
 }
-
-.product-list li {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+.textHeader{
+  margin: 10px 10px 0px 10px;
+  font-size: 25px;
 }
-
-.product-list li img {
-  width: 100px;
-  margin-right: 10px;
+.textForm{
+  margin: 0px 10px 10px 10px;
+  font-size: 15px;
+  width: 90%;
 }
-
-.price {
+.product-search{
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
+}
+.add-form{
+  border-collapse: collapse;
+  width: 90%;
+  margin: 10px;
+  font-size: 10px;
   font-weight: bold;
+}
+.product-table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 10px;
+  font-size: 10px;
+  th, td {
+    border: 1px solid #000000 ;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #C6C6D1;
+  }
+}
+#productName{
+  background-color: #C6C6D1;
+  font-weight: bold;
+}
+
+#edit{
+  margin-right:5px;
+  background: #FF9933;
+  color: white;
+}
+#delete{
+  margin-right:5px;
+  background: #FF0033;
+  color: white;
+}
+#addProduct{
+  margin-left:10px;
+  margin-right:5px;
+  background: #33CC00;
+  color: white;
+}
+.add-form {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+.formAddNewProduct{
+  text-align: center;
+}
+#formAddNewProduct{
+   text-align: center;
+ }
+#submit{
+  margin-left:10px;
+  margin-right:5px;
+  background: #33CC00;
+  color: white;
 }

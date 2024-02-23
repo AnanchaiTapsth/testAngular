@@ -1,12 +1,42 @@
-<h2>Product Listing</h2>
+<p class = "textHeader"> Product Listing </p>
+<input class="product-search" type="text" placeholder="Search by name" [(ngModel)]="searchText">
+<p class = "textHeader"> List of Products </p>
+<table class="product-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of filteredProducts">
+    <td id = "productName">{{ product.name }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.price | currency }}</td>
+    <td><img [src]="product.image" alt="Product Image"></td>
+    <td>
+      <button mat-raised-button id ="edit" (click)="showAddForm()">Edit</button>
+      <button mat-raised-button id ="delete" (click)="deleteProduct(product)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
 
-<input type="text" placeholder="Search by name" [(ngModel)]="searchText">
+<button mat-raised-button id = "addProduct" (click)="showAddForm()">Add Product</button>
 
-<ul class="product-list">
-  <li *ngFor="let product of filteredProducts">
-    <img [src]="product.image" alt="Product Image">
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.description }}</p>
-    <p class="price">{{ product.price | currency }}</p>
-  </li>
-</ul>
+<div *ngIf="showAddFormFlag" class="add-form">
+  <h2 id = "formAddNewProduct">Add New Product</h2>
+  <form class="formAddNewProduct" (submit)="submitNewProduct()">
+    <label>Name : </label><br>
+    <input class = "textForm" type="text" [(ngModel)]="newProduct.name" name="name" required> <br>
+    <label>Description:</label> <br>
+    <input class = "textForm" type="text" [(ngModel)]="newProduct.description" name="description" required> <br>
+    <label>Price:</label> <br>
+    <input class = "textForm" type="text" [(ngModel)]="newProduct.price" name="price" required> <br>
+    <label>Image Path:</label> <br>
+    <input class = "textForm" type="text" [(ngModel)]="newProduct.image" name="image" required> <br>
+    <button mat-raised-button id ="submit" type="submit">Submit</button>
+  </form>
+</div>
